@@ -17,6 +17,7 @@ This script requires `ghostscript` to be installed (will automatically install i
 ## convert-mp3
 
 This script uses ffmpeg to convert audio files to mp3. Example usage: `convert-mp3 \path\to\audio.file`. This will generate an mp3 file with a frequency of 192k.
+`ffmpeg` can be installed via `sudo apt install -y ffmpeg`.
 
 ## change-extension
 
@@ -28,7 +29,7 @@ This script renames a file at the file system level. Usage example: `change-file
 
 ## download-yt-audio
 
-This script allows you to download an mp3 file from YewTube/Piped/youtube. Example of usage: `download-yt-audio --url "https://piped.video/watch?v=BW0gXbEVYgA" --output $HOME/Desktop` or alternatively `download-yt-audio --u "https://piped.video/watch?v=BW0gXbEVYgA" --o $HOME/Desktop`. If the `--output` \ `-o` is unspecified, the `$PWD` (current terminal folder) is used instead. This script relies on `yt-dlp` to be installed. If it isn't, then please execute the following: `sudo apt install -y python3 python-is-python3 && pip install yt-dlp` (on Debian-based Linux distributions such as Ubuntu, Zorin, Mint, Pop!_OS, etc.).
+This script allows you to download an mp3 file from YewTube/Piped/youtube. Example of usage: `download-yt-audio --url "https://piped.video/watch?v=BW0gXbEVYgA" --output $HOME/Desktop` or alternatively `download-yt-audio --u "https://piped.video/watch?v=BW0gXbEVYgA" --o $HOME/Desktop`. If the `--output` \ `-o` is unspecified, the `$PWD` (current terminal folder) is used instead. This script relies on `yt-dlp` to be installed. If it isn't, then please execute the following: `sudo apt install -y python3 python-is-python3 && pip install yt-dlp` (on Debian-based Linux distributions such as Ubuntu, Zorin, Mint, Pop!_OS, etc.). Also relies on `ffmpeg` so please install it via `sudo apt install -y ffmpeg`.
 
 
 
