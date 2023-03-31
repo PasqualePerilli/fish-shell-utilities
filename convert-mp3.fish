@@ -5,7 +5,8 @@ function convert-mp3
 	echo 'There are ' $array_length ' parameters'
 	if test $array_length -gt 0
 		set input_file (string trim $argv[1])
-		set output_file "$input_file".mp3
+		set output_file (string trim (echo $input_file | sed 's/\.[^.]*$//'))
+		set output_file "$output_file.mp3"
 		echo 'Input file is ['$input_file']'
 		echo 'Output file is ['$output_file']'
 		echo 'ffmpeg -i ' '"'$input_file'"' ' -vn -ar 44100 -ac 2 -b:a 192k' '"'$output_file'"'
