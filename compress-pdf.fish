@@ -30,17 +30,20 @@ function compress-pdf
 		echo 'Prompt mode'
 		echo 'Interactive mode'
 		#Interactive mode
-		read -p 'echo "Please type the full path to PDF file that needs to be compressed (or drag it into the terminal) and then press ENTER: "' -l input
+		read -p 'echo "Please type the full path to PDF file that needs to be compressed (or drag it into the terminal) and then press ENTER: "' -l input_file
+		set input $input_file
 		read -p 'echo "Please type the full path to the PDF file that will be generated (followed by enter) OR press ENTER to use the default: "' -l output
-		read -p 'echo "Please type the quality (case SENSITIVE) you wish to compress it to between low, medium, high and then press ENTER: "' -l output
+		read -p 'echo "Please type the quality (case SENSITIVE) you wish to compress it to between low, medium, high and then press ENTER: "' -l user_quality
 	end
 	
-	if test $output = ''
+	if test $output = ""
 		#If output isn't set yet, set it now
-		set output (string replace .pdf _compressed.pdf $input)
+		#set output (string replace .pdf _compressed.pdf $input)
+		set output (string trim (echo $input | sed 's/\.[^.]*$//'))
+		set output "$output-compressed.pdf"
 	end
 	
-	if test $user_quality = ''
+	if test $user_quality = ""
 		#If quality isn't set yet, set it now
 		set user_quality medium
 	end
@@ -56,7 +59,7 @@ function compress-pdf
 			set gs_quality "/ebook"
 	end	
 	
-	echo 'Quality is ' $user_quality ', input is ' $input ' and output is ' $output
+	echo "Quality is $user_quality, input is $input and output is $output"
 	
 	
 	#Whether interactive or automated, the variables have now been set. Proceed with checking if ghostscript is installed
@@ -67,8 +70,19 @@ function compress-pdf
 		sudo apt-get -qq --force-yes install ghostscript >/dev/null
 	end
 	
+	
+	set -l first_character ''
+	set first_character (string sub --length 1 $input)
+	
+	
+	
+	if test $first_character = "'"
+		set input (string sub --start=2 --end=-1 $input)
+		set output (string sub --start=2 $output)
+	end
+	
 	#Proceed with the compression of the pdf
-	echo 'Starting conversion of file [' $input '] to file [' $output '] with ' $user_quality ' quality'
+	echo "Starting conversion of file [$input] to file [$output] with $user_quality quality"
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=$gs_quality -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$output $input
 
 	
