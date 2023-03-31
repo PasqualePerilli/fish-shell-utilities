@@ -14,7 +14,7 @@ function compress-pdf
 			set next_index (math  $next_index + 1)
 			#echo 'Index ' $index ', value: ' $argv[$index] ' and next index is ' $next_index
 			switch "$argv[$index]"
-				case -q -quality
+				case -q --quality
 					set user_quality $argv[$next_index]
 				case -i --input
 					set input $argv[$next_index]
