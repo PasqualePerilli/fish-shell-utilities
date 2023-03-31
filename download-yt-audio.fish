@@ -10,7 +10,7 @@ function download-yt-audio
 	set -l array_length (echo $argv | wc -w)
 	set -l next_index 1
 	set -l url ''
-	set -l output_folder ''
+	set -l output_folder "$PWD"
 	
 	if test $array_length -gt 0
 		for index in (seq 1 $array_length)
