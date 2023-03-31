@@ -25,3 +25,10 @@ This script manipulates an input string to produce a new string. Should be used 
 ## change-file-extension
 
 This script renames a file at the file system level. Usage example: `change-file-extension -i /path/to/file.pdf -e doc` or `change-file-extension --input /path/to/file.pdf --extension doc`. Result is the input file renamed to `/path/to/file.doc`
+
+## download-yt-audio
+
+This script allows you to download an mp3 file from YewTube/Piped/youtube. Example of usage: `download-yt-audio --url "https://piped.video/watch?v=BW0gXbEVYgA" --output $HOME/Desktop` or alternatively `download-yt-audio --u "https://piped.video/watch?v=BW0gXbEVYgA" --o $HOME/Desktop`. If the `--output` \ `-o` is unspecified, the `$PWD` (current terminal folder) is used instead. This script relies on `yt-dlp` to be installed. If it isn't, then please execute the following: `sudo apt install -y python3 python-is-python3 && pip install yt-dlp` (on Debian-based Linux distributions such as Ubuntu, Zorin, Mint, Pop!_OS, etc.).
+
+
+
