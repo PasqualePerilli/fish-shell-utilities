@@ -20,4 +20,4 @@ This script uses ffmpeg to convert audio files to mp3. Usage is simple: `convert
 
 ## change-extension
 
-This script manipulates an input string to produce a new string. Should be used like so: `change-extension --input /path/to/file.pdf --extension doc` and the output will be *a string* having value: `/path/to/file.doc`. *NOTE:* this command does *NOT* alter the file system. Use `change-file-extension` to do that instead.
+This script manipulates an input string to produce a new string. Should be used like so: `change-extension --input /path/to/file.pdf --extension doc` or alternatively `change-extension -i /path/to/file.pdf -e doc` and the output will be *a string* having value: `/path/to/file.doc`. *NOTE:* this command does *NOT* alter the file system. Use `change-file-extension` to do that instead.
