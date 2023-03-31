@@ -17,3 +17,7 @@ This script requires `ghostscript` to be installed (will automatically install i
 ## convert-mp3
 
 This script uses ffmpeg to convert audio files to mp3. Usage is simple: `convert-mp3 \path\to\audio.file`. This will generate an mp3 file with a frequency of 192k.
+
+## change-extension
+
+This script manipulates an input string to produce a new string. Should be used like so: `change-extension --input /path/to/file.pdf --extension doc` and the output will be *a string* having value: `/path/to/file.doc`. *NOTE:* this command does *NOT* alter the file system. Use `change-file-extension` to do that instead.
