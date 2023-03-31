@@ -1,0 +1,1 @@
+alias software-update="sudo apt update && sudo apt upgrade -y && flatpak update -y && sudo snap refresh && sudo apt autoremove -y"
