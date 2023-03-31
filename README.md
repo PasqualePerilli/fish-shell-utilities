@@ -31,5 +31,7 @@ This script renames a file at the file system level. Usage example: `change-file
 
 This script allows you to download an mp3 file from YewTube/Piped/youtube. Example of usage: `download-yt-audio --url "https://piped.video/watch?v=BW0gXbEVYgA" --output $HOME/Desktop` or alternatively `download-yt-audio --u "https://piped.video/watch?v=BW0gXbEVYgA" --o $HOME/Desktop`. If the `--output` \ `-o` is unspecified, the `$PWD` (current terminal folder) is used instead. This script relies on `yt-dlp` to be installed. If it isn't, then please execute the following: `sudo apt install -y python3 python-is-python3 && pip install yt-dlp` (on Debian-based Linux distributions such as Ubuntu, Zorin, Mint, Pop!_OS, etc.). Also relies on `ffmpeg` so please install it via `sudo apt install -y ffmpeg`.
 
+## download-yt-video
 
+This script allows you to download an mp3 file from YewTube/Piped/youtube. Example of usage: `download-yt-video --url "https://piped.video/watch?v=BW0gXbEVYgA" --output $HOME/Desktop` or alternatively `download-yt-video --u "https://piped.video/watch?v=BW0gXbEVYgA" --o $HOME/Desktop`. If the `--output` \ `-o` is unspecified, the `$PWD` (current terminal folder) is used instead. This script relies on `yt-dlp` to be installed. If it isn't, then please execute the following: `sudo apt install -y python3 python-is-python3 && pip install yt-dlp` (on Debian-based Linux distributions such as Ubuntu, Zorin, Mint, Pop!_OS, etc.). Also relies on `ffmpeg` so please install it via `sudo apt install -y ffmpeg`.
 
