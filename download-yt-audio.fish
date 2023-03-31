@@ -44,7 +44,7 @@ function download-yt-audio
 	set -l full_path_webm ""
 	set full_path_webm (yt-dlp --print filename $url --restrict-filenames)
 	set full_path_webm "$output_folder$full_path_webm"
-	echo "$full_path_webm"
+	#echo "$full_path_webm"
 	
 	#We need to use ffmpeg to convert to mp3
 	convert-mp3 $full_path_webm
