@@ -11,13 +11,17 @@ This script is written for Debian-based Linux distributions (Debian, Ubuntu, Zor
 
 ## compress-pdf
 
-This script requires `ghostscript` to be installed (will automatically install it on Debian-based Linux distributions if it cannot find it). Usage is like this:
+This script requires `ghostscript` to be installed (will automatically install it on Debian-based Linux distributions if it cannot find it). Example usage:
 `compress-pdf --input "/path/to/file.pdf" --quality medium --output "/path/to/compressed_file.pdf"` or `compress-pdf -i "/path/to/file.pdf" -q medium -o "/path/to/compressed_file.pdf"`. It can also be run as `compress-pdf` and the user is prompted to type the full path to the input pdf file, the full path to the output compressed pdf file and the quality. Quality can be picked between `low`, `medium` and `high`. The only mandatory parameter is the input pdf file. If not specified, the output compressed pdf file will be located in the same folder as the original, with the same file name but having the `-compressed` suffix. If not specified, the compression quality will be set to `medium`.
 
 ## convert-mp3
 
-This script uses ffmpeg to convert audio files to mp3. Usage is simple: `convert-mp3 \path\to\audio.file`. This will generate an mp3 file with a frequency of 192k.
+This script uses ffmpeg to convert audio files to mp3. Example usage: `convert-mp3 \path\to\audio.file`. This will generate an mp3 file with a frequency of 192k.
 
 ## change-extension
 
-This script manipulates an input string to produce a new string. Should be used like so: `change-extension --input /path/to/file.pdf --extension doc` or alternatively `change-extension -i /path/to/file.pdf -e doc` and the output will be *a string* having value: `/path/to/file.doc`. *NOTE:* this command does *NOT* alter the file system. Use `change-file-extension` to do that instead.
+This script manipulates an input string to produce a new string. Should be used like shown in the following two examples: `change-extension --input /path/to/file.pdf --extension doc` or alternatively `change-extension -i /path/to/file.pdf -e doc` and the output will be *a string* having value: `/path/to/file.doc`. *NOTE:* this command does *NOT* alter the file system. Use `change-file-extension` to do that instead.
+
+## change-file-extension
+
+This script renames a file at the file system level. Usage example: `change-file-extension -i /path/to/file.pdf -e doc` or `change-file-extension --input /path/to/file.pdf --extension doc`. Result is the input file renamed to `/path/to/file.doc`
