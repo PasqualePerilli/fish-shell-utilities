@@ -6,7 +6,7 @@ function compress-pdf
 	set -l array_length (echo $argv | wc -w)
 	set -l next_index 1
 	
-	echo 'There are ' $array_length ' parameters'
+	#echo 'There are ' $array_length ' parameters'
 	
 	if test $array_length -gt 0
 		echo 'Automated mode'

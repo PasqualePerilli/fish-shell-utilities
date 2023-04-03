@@ -1,0 +1,1 @@
+alias search-text=" grep -rnw $PWD -e "

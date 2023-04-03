@@ -14,7 +14,7 @@ function change-extension
 					set new_extension $argv[$next_index]
 				case -h --help
 					echo 'Use the change-extension command as follows'
-					echo 'change-extension --input /path/to/file.pdf --extension doc'
+					echo 'change-file-extension --input /path/to/file.pdf --extension doc'
 					echo 'Or alternatively:'
 					echo 'change-extension -i /path/to/file.pdf -e doc'
 			end
@@ -25,19 +25,19 @@ function change-extension
 				set output_file "$output_file.$new_extension"
 				mv $input_file $output_file
 			else
-				echo 'Use the change-extension command as follows'
+				echo 'Use the change-file-extension command as follows'
 				echo 'change-extension --input /path/to/file.pdf --extension doc'
 				echo 'Or alternatively:'
 				echo 'change-extension -i /path/to/file.pdf -e doc'
 			end
 		else
-			echo 'Use the change-extension command as follows'
+			echo 'Use the change-file-extension command as follows'
 			echo 'change-extension --input /path/to/file.pdf --extension doc'
 			echo 'Or alternatively:'
 			echo 'change-extension -i /path/to/file.pdf -e doc'
 		end
 	else
-		echo 'Use the change-extension command as follows'
+		echo 'Use the change-file-extension command as follows'
 		echo 'change-extension --input /path/to/file.pdf --extension doc'
 		echo 'Or alternatively:'
 		echo 'change-extension -i /path/to/file.pdf -e doc'

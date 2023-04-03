@@ -1,0 +1,1 @@
+alias reload-environment-variables="bash -c 'source /home/$USER/.profile && fish'"
