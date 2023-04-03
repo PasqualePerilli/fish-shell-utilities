@@ -9,7 +9,7 @@ function update-pdf-keywords
 	read -p 'echo "Please type the full path to the pdf file and press enter: "' -l input_file
 	read -p 'echo "Please enter the new keywords: "' -l new_keywords
 	set -l input_folder ''
-    set -l input_folder ''
+	set -l input_folder ''
 	set -l info_file ''
 	set -l output_file ''
 	set input_folder (dirname $input_file)
