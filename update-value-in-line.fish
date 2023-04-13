@@ -34,20 +34,23 @@ function update-value-in-line
 		set -l new_file (change-extension --input $file_to_modify --extension 'modified')
 		
 		set -l line_index 0
-		
+		#echo "Applying modifications...."
 		if test -f $file_to_modify
 			if test $line_to_modify -gt 0 #If line already exists, replace line
+				#echo "Creating $new_file"
 				touch $new_file
 				while read -l line
 					set line_index (math $line_index + 1)
 					if test $line_index -eq $line_to_modify
 						set -l modified_line (update-value-in-string --line $line --original $existing_value --new $new_value)
+						echo $modified_line >> $new_file
 					else
 						echo $line >> $new_file
 					end
 				end < $file_to_modify
 				rm $file_to_modify && mv $new_file $file_to_modify	
 			else #Otherwise just append to the existing file
+				#echo "Appending to file..."
 				echo "$new_value" >> $file_to_modify
 			end
 			echo "Updated file $file_to_modify"

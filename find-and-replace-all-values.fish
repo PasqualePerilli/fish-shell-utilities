@@ -33,7 +33,7 @@ function find-and-replace-all-values
 				update-value-in-line --file $file_to_read --line $lines_to_modify[$index] --existing $string_to_search --value $replacement_value
 			end
 		else
-			
+			echo "There are no lines to modify in $file_to_read"
 		end
 		
 		
