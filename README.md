@@ -1,5 +1,5 @@
 # fish-shell-utilities
-This repository holds my .fish files
+This repository holds my .fish files. To fish-ify the bourne again shell (BASH), please follow [these instructions](bash-tweaks.md)
 
 ## update-pdf-keywords
 
